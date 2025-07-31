@@ -24,7 +24,7 @@ class PublicUsersClient(APIClient):
 
     def create_user_api(self, request: CreateUserRequestDict) -> Response:
         """
-        Метод выполняет создание пользователя.
+        Метод создает пользователя.
 
         :param request: request: Словарь с данными для создания пользователя (см. `CreateUserRequestDict`).
         :return: Ответ от сервера в виде объекта httpx.Response
