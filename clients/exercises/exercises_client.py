@@ -30,7 +30,7 @@ class ExercisesClient(APIClient):
         :param query: Словарь с courseId.
         :return: Ответ от сервера в виде объекта httpx.Response
         """
-        return self.get("/api/v1/exercises", params=query)
+        return self.get("/api/v1/exercises", params=query.model_dump(by_alias=True))
 
     def get_exercise_api(self, exercises_id: str) -> Response:
         """
@@ -92,7 +92,7 @@ class ExercisesClient(APIClient):
         :param query: Словарь с courseId для фильтрации упражнений.
         :return: Ответ от сервера в виде словаря со списком упражнений.
         """
-        response = self.get_exercises_api(query)
+        response = self.get_exercises_api(query.model_dump(by_alias=True))
         return GetExercisesResponseSchema.model_validate_json(response.text)
 
     def create_exercise(
