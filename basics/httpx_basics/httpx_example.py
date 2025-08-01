@@ -63,7 +63,7 @@ response = httpx.get("https://jsonplaceholder.typicode.com/todos", params=params
 print(response.url)  # https://jsonplaceholder.typicode.com/todos?userId=1
 print(response.json())  # Фильтрованный список задач
 # Отправка файлов
-files = {"file": ("example.txt", open("example.txt", "rb"))}
+files = {"file": ("example.txt", open("../../example.txt", "rb"))}
 
 response = httpx.post("https://httpbin.org/post", files=files)
 
