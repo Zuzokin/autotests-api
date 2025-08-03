@@ -10,6 +10,10 @@ from clients.authentication.authentication_client import (
 
 
 class AuthenticationUserSchema(BaseModel):  # Наследуем от BaseModel вместо TypedDict
+    """
+    Описание структуры авторизации пользователя. Состоит из email и password
+    """
+
     email: str
     password: str
 
