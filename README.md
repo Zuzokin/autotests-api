@@ -37,7 +37,9 @@ JWT_REFRESH_TOKEN_EXPIRE=5184000
 ```
 
 ## Run server
-
+```shell
+.\.venv\Scripts\activate
+```
 ```shell
 uvicorn main:app --reload
 ```
